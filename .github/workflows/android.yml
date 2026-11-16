@@ -45,9 +45,13 @@ jobs:
       - name: Build web application
         run: npm run build
 
+      - name: Generate Capacitor JSON configuration
+        run: |
+          node -e "require('node:fs').writeFileSync('capacitor.config.json', JSON.stringify({ appId: 'com.byhrsn.dslrsim', appName: 'Byhrsn DSLR Sim', webDir: 'dist', bundledWebRuntime: false }, null, 2) + '\\n')"
+          cat capacitor.config.json
+
       - name: Generate Android project
         run: |
-          npx cap init "Byhrsn DSLR Sim" com.byhrsn.dslrsim --web-dir dist
           npx cap add android
           npx cap sync android
 
