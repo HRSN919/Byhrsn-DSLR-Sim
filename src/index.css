@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-dslr-orange: #F97316;
+  --color-dslr-orange-hover: #EA580C;
+  --color-studio-bg: #0D0F13;
+  --color-studio-surface: #151921;
+  --color-studio-elevated: #1C212C;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #0D0F13;
+    color: #F3F4F6;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom precision DSLR range slider */
+input[type="range"].dslr-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: #262C38;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].dslr-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #F97316;
+  border: 2px solid #0D0F13;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.5);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
+
+input[type="range"].dslr-range::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+  background: #FB923C;
+}
+
+input[type="range"].dslr-range:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.45);
+}
+
+input[type="range"].dslr-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #F97316;
+  border: 2px solid #0D0F13;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

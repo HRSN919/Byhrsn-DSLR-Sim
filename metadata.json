@@ -1,0 +1,6 @@
+{
+  "name": "لنزنگار | شبیه‌ساز دوربین DSLR و لنز",
+  "description": "شبیه‌ساز تخصصی دوربین‌های DSLR و لنزهای جدید، آموزش گام‌به‌گام عکاسی و مقایسه پارامترهای نوردهی - byhrsn.com",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
